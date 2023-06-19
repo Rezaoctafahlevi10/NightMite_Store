@@ -104,7 +104,7 @@
             </div>
         </nav>
         @yield('content')
-        <footer class="text-danger bg-dark text-center mt-3 d-flex justify-content-center static-bottom" style="height: 50px">
+        <footer class="text-danger bg-dark text-center mt-5 d-flex justify-content-center static-bottom" style="height: 50px">
             <h4 class="align-self-center">Copyright NigthMite.co.id 2023 All Rights Reserved</h4>
         </footer>
     </div>

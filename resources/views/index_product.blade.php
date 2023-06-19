@@ -1,13 +1,14 @@
 @extends('layouts.app')
 @section('contents')
     <div class="container">
+        @for ($i = 0; $i < count($products)/5; $i++)
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-20">
                 <div class="card">
                     <div class="card-group m-auto">
                         @foreach ($products as $product)
-                            <div class="card m-3" style="width: 18rem;">
-                                <img class="card-img-top" height="250px" src="{{ url('storage/' . $product->image)}}"
+                            <div class="card m-3">
+                                <img class="card-img-top" height="250px" width="250px" src="{{ url('storage/' . $product->image)}}"
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <p class="card-text">{{ $product->name }}</p>
@@ -28,5 +29,6 @@
                 </div>
             </div>
         </div>
+        @endfor
     </div>
 @endsection

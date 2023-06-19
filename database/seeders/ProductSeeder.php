@@ -28,7 +28,7 @@ class ProductSeeder extends Seeder
                 <p>Miliki kaos dari 3Second ini untuk tampil terbaik dengan gaya yang classic!</p>
                 <p>● Dibuat menggunakan bahan katun yang lembut, halus, perawatan yang mudah, serta menyerap keringat dengan baik</p> 
                 <p>● Dapat di padu-padankan dengan fashion items yang lain karena desain yang minimalis</p>',
-                'image' => '1686812735_Samsung.jpeg',
+                'image' => 'Avril.jpg',
                 'stock' => 36,
             ],
             [
@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
                 <p>Miliki kaos dari 3Second ini untuk tampil terbaik dengan gaya yang classic!</p>
                 <p>● Dibuat menggunakan bahan katun yang lembut, halus, perawatan yang mudah, serta menyerap keringat dengan baik</p> 
                 <p>● Dapat di padu-padankan dengan fashion items yang lain karena desain yang minimalis</p>',
-                'image' => '1686812735_Samsung.jpeg',
+                'image' => 'Avril.jpg',
                 'stock' => 36,
             ],
             [
@@ -58,7 +58,7 @@ class ProductSeeder extends Seeder
                 <p>Miliki kaos dari 3Second ini untuk tampil terbaik dengan gaya yang classic!</p>
                 <p>● Dibuat menggunakan bahan katun yang lembut, halus, perawatan yang mudah, serta menyerap keringat dengan baik</p> 
                 <p>● Dapat di padu-padankan dengan fashion items yang lain karena desain yang minimalis</p>',
-                'image' => '1686812735_Samsung.jpeg',
+                'image' => 'Avril.jpg',
                 'stock' => 36,
             ],
             [
@@ -73,7 +73,7 @@ class ProductSeeder extends Seeder
                 <p>Miliki kaos dari 3Second ini untuk tampil terbaik dengan gaya yang classic!</p>
                 <p>● Dibuat menggunakan bahan katun yang lembut, halus, perawatan yang mudah, serta menyerap keringat dengan baik</p> 
                 <p>● Dapat di padu-padankan dengan fashion items yang lain karena desain yang minimalis</p>',
-                'image' => '1686812735_Samsung.jpeg',
+                'image' => 'Avril.jpg',
                 'stock' => 36,
             ],
             [
@@ -88,7 +88,7 @@ class ProductSeeder extends Seeder
                 <p>Miliki kaos dari 3Second ini untuk tampil terbaik dengan gaya yang classic!</p>
                 <p>● Dibuat menggunakan bahan katun yang lembut, halus, perawatan yang mudah, serta menyerap keringat dengan baik</p> 
                 <p>● Dapat di padu-padankan dengan fashion items yang lain karena desain yang minimalis</p>',
-                'image' => '1686812735_Samsung.jpeg',
+                'image' => 'Avril.jpg',
                 'stock' => 36,
             ],
         ];

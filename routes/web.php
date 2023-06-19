@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Redirect;
 */
 
 Route::get('/', function () {return Redirect::route('index_product');});
-Route::get('/product/reporting_order', function () {return view('reporting');})-> name('reporting_order');
+Route::get('/product/reporting_order', [OrderController::class, 'chart'])-> name('reporting_order');
 Auth::routes();
 
 Route::get('/product', [ProductController::class, 'index_product'])->name('index_product');

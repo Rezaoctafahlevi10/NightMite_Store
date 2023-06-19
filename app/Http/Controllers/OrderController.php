@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Order;
-use App\Models\Transaction;
 use App\Models\Product;
-use Illuminate\Support\Facades\Redirect;
+use App\Models\Transaction;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
 {
@@ -95,5 +98,36 @@ class OrderController extends Controller
         ]);
 
         return Redirect::back();
+    }
+
+    public function chart() {
+        $result = DB::table('products')
+        ->join('transactions', 'products.id', '=', 'transactions.product_id')
+        ->select('products.price', 'transactions.amount')
+        ->addSelect(DB::raw('transactions.amount * products.price AS income'))
+        ->get();
+
+        foreach ($result as $row) {
+            $amount = $row->amount;
+            $price = $row->price;
+            $allIncome = $row->income;
+        };
+
+        $total_income = Transaction::select(DB::raw("SELECT transactions.amount, transactions.product_id 
+        FROM transactions JOIN products ON transactions.price = products.price 
+        WHERE transactions.products_id == products.id"))
+        ->addSelect(DB::raw("transactions.amount * transactions.price AS income"));
+
+        // $total_income = sum($allIncome);
+        
+        // $total_income = Transaction::select(DB::raw("CAS(SUM(total_harga) as int) as total_income"))
+        // ->GroupBy(DB::raw("Month(created_at)"))
+        // ->pluck('total_income');
+        
+        $month = Order::select(DB::raw("MONTHNAME(created_at) as month"))
+        ->GroupBy(DB::raw("MONTHNAME(created_at)"))
+        ->pluck('month');
+
+        return view('reporting', compact('total_income', 'month'));
     }
 }
